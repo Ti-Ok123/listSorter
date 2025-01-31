@@ -17,12 +17,12 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
             for(int k = 0; k < i + 1; k++){
                 if(currentItem.isGreater(list.getContent())){
                     list.next();
-                } else if(currentItem.isLess(list.getContent())){
+                } else if(currentItem.isLess(list.getContent()) || currentItem.isEqual(list.getContent())){
                     list.insert(currentItem);
                     while(!list.getContent().equals(currentItem)) list.next();
                     list.remove();
                     break;
-                } else break;
+                }
             }
         }
     }
