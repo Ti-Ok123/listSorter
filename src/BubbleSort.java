@@ -46,9 +46,8 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 } else if(list.getContent().equals(item2)){
                     list.setContent(item1);
                     j--;
-                }
-                list.next();
-            } if(i != j) list = listCopie;
+                } list.next();
+            } if(i != 0 || j != 0) list = listCopie;
         }
     }
 }
