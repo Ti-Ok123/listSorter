@@ -8,15 +8,18 @@ public class Main {
         myList.append(new MyNumber(4));
         myList.append(new MyNumber(3));
         myList.append(new MyNumber(5));
-        myList.append(new MyNumber(1));
+        myList.append(new MyNumber(3));
         myList.append(new MyNumber(8));
         myList.append(new MyNumber(4));
         myList.append(new MyNumber(6));
         myList.append(new MyNumber(5));
+        myList.append(new MyNumber(1));
 
         System.out.println("Vor dem Sortieren:");
         printList(myList);
-        new SelectionSort<>(myList).selectionSort();
+        new BubbleSort<>(myList).bubbleSort();
+//        new SelectionSort<>(myList).selectionSort();
+//        new InsertionSort<>(myList).insertionSort();
 
         System.out.println("Nach dem Sortieren:");
         printList(myList);
