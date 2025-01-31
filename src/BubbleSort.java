@@ -43,22 +43,14 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
             System.out.println("Getauscht wird: " + item1 + " + " + item2);
             list.toFirst();
             int i = 1, j = 1;
-            MyNumber item_1 = (MyNumber) item1;
-            MyNumber item_2 = (MyNumber) item2;
-            if(list.getContent().equals(item_2)) i++;
+            if(list.getContent().equals(item2)) i++;
 
-            while(list.hasAccess()){
-                if(list.getContent().equals(item1)) System.out.println("ja");
-                list.next();
-            }
-            list.toFirst();
-
-            while(list.hasAccess() && !((MyNumber)list.getContent()).isEqual(item_1)){
+            while(list.hasAccess() && !(list.getContent()).equals(item1)){
                 i++;
                 list.next();
             }
             list.toFirst();
-            while(list.hasAccess() && !((MyNumber)list.getContent()).isEqual(item_2)){
+            while(list.hasAccess() && !(list.getContent()).equals(item2)){
                 j++;
                 list.next();
             }
@@ -67,8 +59,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
             if(i < j){
                 while(list.hasAccess()){
-                    MyNumber listElement = (MyNumber) list.getContent();
-                    if(listElement.isEqual(item_1)){
+                    if(list.getContent().equals(item1)){
                         list.insert(item2);
                         list.remove();
                     }  list.next();
@@ -79,8 +70,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 list.remove();
             } else if (i > j){
                 while(list.hasAccess()){
-                    MyNumber listElement = (MyNumber) list.getContent();
-                    if(listElement.isEqual(item_2)){
+                    if(list.getContent().equals(item2)){
                         list.insert(item1);
                         list.remove();
                     }  list.next();
