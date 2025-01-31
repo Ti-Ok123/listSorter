@@ -19,7 +19,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 ContentType item1 = list.getContent();
                 list.next();
                 ContentType item2 = list.getContent();
-                if(item1.isGreater(item2)) swap(list, item1, item2);
+                if(item1.isGreater(item2)) swap2(list, item1, item2);
             }
         }
     }

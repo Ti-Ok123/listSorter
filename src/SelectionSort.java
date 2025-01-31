@@ -10,7 +10,7 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
     }
 
     public void selectionSort() {
-        for(int i = 0; i < laengeList(list) - 2; i++){
+        for(int i = 0; i < laengeList(list) - 1; i++){
             // gehe durch die Liste (jede Runde ab einer Stelle weiter) und ermittle das kleinste Element (minimum)
             list.toFirst();
             for(int k = 0; k < i; k++) list.next();
@@ -28,8 +28,10 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
             ContentType item1 = list.getContent();
             list.setContent(minimum);
             list.next();
-            while(!list.getContent().equals(minimum)) list.next();
-            list.setContent(item1);
+            while(list.hasAccess()){
+                if(list.getContent().equals(minimum))list.setContent(item1);
+                else list.next();
+            }
         }
     }
 
