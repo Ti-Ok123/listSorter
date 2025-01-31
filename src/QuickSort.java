@@ -10,9 +10,19 @@ public class QuickSort<ContentType extends ComparableContent<ContentType>> {
     }
 
     public void quickSort() {
-
+        if(!list.isEmpty()) quicksort_intern(laengeList(list)/2, 0, laengeList(list));
     }
 
-    private void quicksort_intern(int left, int right) {
+    private void quicksort_intern(int pivot, int left, int right) {
+    }
+
+    public int laengeList(List<ContentType> list){
+        if(list.isEmpty() || list == null) return 0;
+        int laenge = 0;
+        list.toFirst();
+        while(list.hasAccess()){
+            laenge++;
+            list.next();
+        } return laenge;
     }
 }
