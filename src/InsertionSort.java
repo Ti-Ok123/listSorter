@@ -13,7 +13,6 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
             list.toFirst();
             for(int k = 0; k < i; k++) list.next();
             ContentType currentItem = list.getContent();
-            list.remove();
             list.toFirst();
             for(int k = 0; k < i + 1; k++){
                 if(currentItem.isGreater(list.getContent())){
