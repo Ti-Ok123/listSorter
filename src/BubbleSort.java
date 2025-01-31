@@ -11,15 +11,33 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
     public void bubbleSort() {
         list.toFirst();
-        while (list.hasAccess()){
+        ContentType uno = list.getContent();
+        list.next();
+        ContentType dos = list.getContent();
+        for (int i = 0; i <= 5 ;i++) {
+            list.toFirst();
+            while (list.hasAccess()) {
 
-            if(list.getContent().isEqual()){}
+                if (uno.isGreater(dos)) {
+                    swap(list, uno, dos);
+                } else if (uno.isEqual(dos)) {
+                } else if (uno.isLess(dos)) {
+                    list.next();
+                }
+            }
         }
     }
-//es muss noch tauschen und irgendwie die stellen in der liste finden
+
     public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
-        ContentType ersatz = item1;
-        item1 = item2;
-        item2 = ersatz;
+        list.toFirst();
+        while (list.hasAccess()){
+            if(list.getContent().equals(item2)) {
+                list.setContent(item1);
+            }else if(list.getContent().equals(item1)){
+               list.setContent(item2);
+            }
+            list.next();
+        }
+        }
     }
-}
+
