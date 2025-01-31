@@ -17,11 +17,15 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
         for(int i = 0; i < lenge; i++){
             list.toFirst();
             a = list.getContent();
+            //System.out.println("a ist"+ a);
             list.next();
             b = list.getContent();
-            for(int j = 0; j < (lenge - i) ; j++){
+            //System.out.println("b ist"+ b);
+            for(int j = 0; j < lenge ; j++){
+                System.out.println("a ist"+ a+ " und i ist"+j);
+                System.out.println("b ist"+ b+" und j ist "+ (j+1));
                 if(a.isGreater(b)){
-                    swap(list, a,i,b, i++);
+                    swap(list, a,j,b, (j+1));
                 }
                 a = list.getContent();
                 list.next();
@@ -52,7 +56,6 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
             list.next();
         }
         list.setContent(item1);
-
-
-    }
-}
+        list.toFirst();
+        for(int i = 0; i< indexa; i++){list.next();}
+}}
