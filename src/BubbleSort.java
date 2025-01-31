@@ -26,7 +26,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 list.next();
                 a++;
                 Zweites = list.getContent();
-                if (Zweites > Erstes) {
+                if (Zweites.isLess(Erstes)) {
                     swap(list, Zweites, Erstes);
                 }
             }
@@ -42,14 +42,14 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
         pos2 = item2;
         list.toFirst();
         while (list.hasAccess()) {
-            if (list.getContent() == item2) {
+            if (list.getContent().equals(item2)) {
                 list.setContent(pos1);
             }
             list.next();
         }
         list.toFirst();
         while (list.hasAccess()) {
-            if (list.getContent() == item1) {
+            if (list.getContent().equals(item1)) {
                 list.setContent(pos2);
             }
             list.next();
