@@ -11,7 +11,12 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
     public void bubbleSort() {
         int lenge = lengeListe();
-        for(int i = 0; i < )
+        for(int i = 0; i < lenge; i++){
+            for(int j = 0; j < (lenge - i) ; j++){
+
+            }
+
+        }
     }
 
     public int lengeListe(){
