@@ -21,7 +21,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
             b = list.getContent();
             for(int j = 0; j < (lenge - i) ; j++){
                 if(a.isGreater(b)){
-                    swap(list, a,b);
+                    swap(list, a,i,b, i++);
                 }
                 a = list.getContent();
                 list.next();
@@ -41,7 +41,17 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
         return lenge;
     }
 
-    public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
+    public <ContentType> void swap(List<ContentType> list, ContentType item1,int indexa, ContentType item2, int indexb) {
+        list.toFirst();
+        for(int i = 0; i < indexa; i++){
+            list.next();
+        }
+        list.setContent(item2);
+        list.toFirst();
+        for(int i = 0; i < indexb; i++){
+            list.next();
+        }
+        list.setContent(item1);
 
 
     }
