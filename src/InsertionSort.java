@@ -19,7 +19,7 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
                 ContentType item1 = list.getContent();
                 list.toFirst();
                 for(int c = 0; c < b; c++){
-                    if(item1 > list.getContent()){
+                    if(item1.isGreater(list.getContent())){
                         ContentType item2 = list.getContent();
                     }
                     list.next();
