@@ -12,7 +12,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
     public void bubbleSort() {
         list.toFirst();
         while (list.hasAccess()){
-            Co
+
             if(list.getContent().isEqual()){}
         }
     }
