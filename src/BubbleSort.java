@@ -10,7 +10,18 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
 
     public void bubbleSort() {
+        int lenge = lengeListe();
+        for(int i = 0; i < )
+    }
 
+    public int lengeListe(){
+        int lenge = 0;
+        list.toFirst();
+        while(list.hasAccess()){
+            lenge++;
+            list.next();
+        }
+        return lenge;
     }
 
     public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
