@@ -10,11 +10,6 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
 
     public void insertionSort() {
         for(int i = 1; i < laengeList(list); i++){
-            for(int j = 1; j < i; j++){
-                list.next();
-            }
-            ContentType min = list.getContent();
-
 
         }
     }

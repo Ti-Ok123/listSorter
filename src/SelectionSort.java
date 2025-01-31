@@ -20,16 +20,16 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
                     minimum = list.getContent();
                 } list.next();
             }
+
             //gehe erneut durch die Liste (jede Runde ab einer Stelle weiter) und tausche das Element der Liste, ab
             //dem man in dem Durchlauf gestartet ist, mit dem kleinsten Element.
             list.toFirst();
             for(int k = 0; k < i; k++) list.next();
             ContentType item1 = list.getContent();
-            list.insert(minimum);
-            list.remove();
+            list.setContent(minimum);
+            list.next();
             while(!list.getContent().equals(minimum)) list.next();
-            list.insert(item1);
-            list.remove();
+            list.setContent(item1);
         }
     }
 
