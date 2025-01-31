@@ -15,7 +15,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
         }
     }
-//es muss och tauschen und irgendwie die stellen in der liste finden
+//es muss noch tauschen und irgendwie die stellen in der liste finden
     public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
         ContentType ersatz = item1;
     }
