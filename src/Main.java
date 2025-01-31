@@ -3,10 +3,10 @@ import utils.List;
 public class Main {
     public static void main(String[] args) {
         List<MyNumber> myList = new List<>();
-        myList.append(new MyNumber(1));
-        myList.append(new MyNumber(1));
+        myList.append(new MyNumber(5));
+        myList.append(new MyNumber(6));
         myList.append(new MyNumber(2));
-        myList.append(new MyNumber(2));
+        myList.append(new MyNumber(1));
         myList.append(new MyNumber(3));
 
         System.out.println("Vor dem Sortieren:");
