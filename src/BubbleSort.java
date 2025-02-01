@@ -10,22 +10,55 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
 
     public void bubbleSort() {
-        list.toFirst();
-        ContentType uno = list.getContent();
-        list.next();
-        ContentType dos = list.getContent();
-        for (int i = 0; i <= 5 ;i++) {
-            list.toFirst();
-            while (list.hasAccess()) {
+        int e = length() -2;
+        int i = e;
+        int x = e;
+        int t = e;
+        ContentType uno = null;
+        ContentType dos = null;
 
-                if (uno.isGreater(dos)) {
-                    swap(list, uno, dos);
-                } else if (uno.isEqual(dos)) {
-                } else if (uno.isLess(dos)) {
-                    list.next();
+        list.toFirst();
+            while (list.hasAccess()) {
+                while (x > 0 && t > 0) {
+                        list.toFirst();
+                        while (i < 4 ) {
+                            list.next();
+                            i++;
+                        }
+                        i = x;
+                        if (list.hasAccess()) {
+                            uno = list.getContent();
+                        }
+                        list.next();
+                        if (list.hasAccess()) {
+                            dos = list.getContent();
+                        }
+
+                        if (!(uno == null || dos == null)) {
+                            if (uno.isGreater(dos)) {
+                                swap(list, uno, dos);
+                            } else if (uno.isEqual(dos)) {
+                                list.toFirst();
+                            } else if (uno.isLess(dos)) {
+                                list.toFirst();
+                                t--;
+                            }
+                        }
+                        i--;
+                        x--;
                 }
+                if(t == 0){
+                    list.toLast();
+                    list.next();
+                }else {
+                    x = e;
+                    i = e;
+                    t = e;
+                }
+
+
             }
-        }
+
     }
 
     public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
@@ -38,6 +71,25 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
             }
             list.next();
         }
-        }
+        list.toFirst();
     }
 
+    public int length(){
+        int y = 1;
+        list.toFirst();
+        while(list.hasAccess()){
+            list.next();
+            y++;
+        }
+        return y;
+    }
+}
+
+
+//im notfall als else nach dem if bedingung für die dos reinehmen.
+//uno = null;
+//dos = null;
+    //    list.toFirst();
+//i = 0;
+//x = 0;
+//t++;
