@@ -86,10 +86,3 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 }
 
 
-//im notfall als else nach dem if bedingung für die dos reinehmen.
-//uno = null;
-//dos = null;
-    //    list.toFirst();
-//i = 0;
-//x = 0;
-//t++;
