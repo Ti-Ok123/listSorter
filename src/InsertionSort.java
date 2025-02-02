@@ -27,23 +27,6 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
         }
     }
 
-    public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
-        if(!list.isEmpty()){
-            List<ContentType> listCopie = list;
-            list.toFirst();
-            int i = 1, j = 1;
-            while(list.hasAccess() && i != 0 && j != 0){
-                if(list.getContent().equals(item1)){
-                    list.setContent(item2);
-                    i--;
-                } else if(list.getContent().equals(item2)){
-                    list.setContent(item1);
-                    j--;
-                } list.next();
-            } if(i != 0 || j != 0) list = listCopie;
-        }
-    }
-
 
     public int laengeList(List<ContentType> list){
         if(list.isEmpty() || list == null) return 0;
