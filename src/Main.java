@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Vor dem Sortieren:");
         printList(myList);
 
-        new BubbleSort<>(myList).bubbleSort();
+        new InsertionSort<>(myList).insertionSort();
 
         System.out.println("Nach dem Sortieren:");
         printList(myList);
