@@ -3,7 +3,6 @@ import utils.List;
 
 public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
     private List<ContentType> list;
-    int i;
 
     public BubbleSort(List<ContentType> pList) {
         this.list = pList;
@@ -14,17 +13,22 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
         if (list.isEmpty()) {
             return;
         } else {
-            int i = getLength(list);
-            list.toFirst();
-            while (0 <= i) {
-                while (list.hasAccess()) {
-                    ContentType temp = list.getContent();
-                    list.next();
-                    if (list.getContent().isLess(temp)) {
-                        swap(list, temp, list.getContent());
+                for (int a = getLength(list); 0 <= a; a--) {
+                    list.toFirst();
+                    while (list.hasAccess()) {
+                        ContentType temp = list.getContent();
+                        list.next();
+                        if (list.hasAccess()){
+                        if (list.getContent().isLess(temp)) {
+                            ContentType temp1 = list.getContent();
+                            swap(list, temp, list.getContent());
+                            list.toFirst();
+                            while (!list.getContent().equals(temp1)) {
+                                list.next();
+                            }
+                        }
+                        }
                     }
-                    i--;
-                }
             }
         }
     }
@@ -68,14 +72,14 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
         }
     }
 
-    /**
-     * i wird nicht größer, problem suchen
-     */
     public int getLength(List<ContentType> list){
+        list.toFirst();
+        int i = 0;
         while(list.hasAccess()){
             i++;
             list.next();
         }
+        list.toFirst();
         return i;
     }
 }
