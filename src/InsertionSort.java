@@ -14,49 +14,54 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
     int i = 0;
     int x = 0;
     int y = 0;
+    int e = length() - 1;
     boolean hä = false;
     ContentType r = null;
+    ContentType q = null;
 
     list.toFirst();
     list.next();
     while(list.hasAccess()){
-        System.out.println(r);
         r = list.getContent();
-        System.out.println(r);
+        x++;
         list.remove();
+        q = list.getContent();
         list.toFirst();
-        while(hä == false){
-            if(r.isGreater(list.getContent())){
+        while(hä == false) {
+            if (r.isGreater(list.getContent())) {
+                list.next();
+                if(!list.getContent().equals(q) && !(q == null)){
+                    i++;
+                } else {
+                    list.append(r);
+                    hä = true;
+                }
+            } else if(r.isEqual(list.getContent())){
                 list.next();
                 i++;
-            }else if(r.isLess(list.getContent())){
+            } else if(r.isLess(list.getContent())){
                 list.toFirst();
                 while(i > 0){
                     i--;
                     list.next();
                 }
-                System.out.println(r);
                 list.insert(r);
-                System.out.println(r);
-                x++;
                 y = x;
                 hä = true;
             }
         }
+        i = 0;
         hä = false;
         list.toFirst();
-        while(y > 0){
+        while(y >= 0){
             list.next();
             y--;
         }
         y = x;
-        System.out.println(list.getContent());
-       // if(x == length() ) {
-         //   list.toLast();
-           // list.next();
-        //}
-        System.out.println(list.getContent());
-        System.out.println(r);
+        if(x == e ) {
+            list.toLast();
+            list.next();
+        }
     }
     }
 
