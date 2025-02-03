@@ -10,7 +10,7 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
     }
 
 
-    //Undendlich schleife
+    //Undendlich schleife////
 
     public void selectionSort() {
         if (list.isEmpty()){

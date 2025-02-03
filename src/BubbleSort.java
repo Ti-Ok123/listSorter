@@ -70,7 +70,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 list.next();
             }
         }
-    }
+    } ///
 
     public int getLength(List<ContentType> list){
         list.toFirst();
