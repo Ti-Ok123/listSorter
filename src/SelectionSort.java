@@ -18,6 +18,7 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
         int l = 0;
         boolean ok = false;
         ContentType lol = null;
+        boolean eq = false;
 
         list.toFirst();
         while(list.hasAccess()){
@@ -40,20 +41,31 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
                         ok = true;
                     }
                 } else if(lol.isEqual(list.getContent())){
+                    if(lol.isLess(list.getContent()) && ! (x == 0)){
+                        eq = true;
+                    }
                     list.next();
+                    x++;
                     if(list.getContent() == null){
                         list.toLast();
                         list.next();
                         ok = true;
                         lol = null;
                     }
-                    x++;
                 } else if(lol.isLess(list.getContent())){
                     list.next();
+                    x++;
                     if(list.getContent() == null){
                         ok = true;
                     }
-                    x++;
+                    if(eq == true){
+                        list.toLast();
+                        list.next();
+                        lol = null;
+                        if(list.getContent() == null){
+                            ok = true;
+                        }
+                    }
                 }
             }
             if (!(lol == null)) {
