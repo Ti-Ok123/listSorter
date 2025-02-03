@@ -9,25 +9,19 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
     }
 
 
-    public void bubbleSort() {
+    public void bubbleSort() {  //liste wird von klein nach groß sortiert
         int lenge = lengeListe();
         System.out.println(lenge);
-        ContentType a = null;
+        ContentType a = null;  //objekt a und b werden jeweils die zu vergleichenden werte zugewiesen
         ContentType b = null;
 
-        for(int i = 0; i < lenge; i++){
+        for(int i = 0; i < lenge; i++){ //äußere schleife
             list.toFirst();
-
-            //System.out.println("a ist"+ a);
-
-            //System.out.println("b ist"+ b);
-            for(int j = 0; j < lenge -i ; j++){
+            for(int j = 0; j < lenge -i ; j++){  //
                 a = list.getContent();
                 list.next();
                 b = list.getContent();
-                System.out.println("a ist "+ a+ " und i ist"+j);
-                System.out.println("b ist "+ b+" und j ist "+ (j+1));
-                if(a.isGreater(b)){
+                if(a.isGreater(b)){  //wenn a(element an stelle vor b) größer ist als b werden beide getauscht
                     swap(list, a,b);
                     list.toFirst();
                     for(int k = 0; k< j; k++){
