@@ -13,7 +13,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
         int lenge = lengeListe();
         if(lenge == 1){System. exit(0);}
         else if (lenge == 2) {
-            ContentType a = null;  //Objekt a und b werden jeweils die zu vergleichenden Werte zugewiesen
+            ContentType a = null;  //Fall: Liste hat nur zwei Elemente -> beide werden geprüft und wenn nötig getauscht
             ContentType b = null;
             a = list.getContent();
             list.next();
