@@ -5,3 +5,8 @@
 //i = 0;
 //x = 0;
 //t++;
+
+//insertion sort bei is less und so
+else if(r.isEqual(list.getContent())){
+                i++;
+            }
