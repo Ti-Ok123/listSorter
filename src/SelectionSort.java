@@ -15,90 +15,64 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
         int i = 0;
         int x = 0;
         int y = 0;
-        int l = 0;
+        int g = 0;
         boolean ok = false;
         ContentType lol = null;
-        boolean eq = false;
 
         list.toFirst();
-        while(list.hasAccess()){
-            x = 0;
-            i = x;
+        while(list.hasAccess()) {
             list.toFirst();
-            l = y;
-            while (l > 0){
+            x = 0;
+            y = g;
+            while(y > 0){
                 list.next();
-                l--;
+                y--;
             }
             lol = list.getContent();
             while(ok == false){
                 if(lol.isGreater(list.getContent())){
                     lol = list.getContent();
-                    list.next();
-                    x++;
                     i = x;
-                    if(list.getContent() == null){
-                        ok = true;
-                    }
-                } else if(lol.isEqual(list.getContent())){
-                    if(lol.isLess(list.getContent()) && ! (x == 0)){
-                        eq = true;
-                    }
                     list.next();
                     x++;
                     if(list.getContent() == null){
                         list.toLast();
                         list.next();
                         ok = true;
-                        lol = null;
+                    }
+                } else if(lol.isEqual(list.getContent())){
+                    list.next();
+                    x++;
+                    if(list.getContent() == null){
+                        list.toLast();
+                        list.next();
+                        ok = true;
                     }
                 } else if(lol.isLess(list.getContent())){
                     list.next();
                     x++;
                     if(list.getContent() == null){
-                        ok = true;
-                    }
-                    if(eq == true){
                         list.toLast();
                         list.next();
-                        lol = null;
-                        if(list.getContent() == null){
-                            ok = true;
-                        }
+                        ok = true;
                     }
                 }
             }
-            if (!(lol == null)) {
-                ok = false;
-                list.toFirst();
-                while (i - 1 + y > 0) {
-                    list.next();
-                    i--;
-                }
-                i = x;
-                list.remove();
-                y++;
-                l = y;
-
-                list.toFirst();
-                while (l > 1) {
-                    list.next();
-                    l--;
-                }
-                list.insert(lol);
+            ok = false;
+            list.toFirst();
+            while(i > 0){
+                list.next();
+                i--;
             }
+            list.remove();
 
+            list.toFirst();
+            while (y > 0) {
+                list.next();
+                y--;
+            }
+            g++;
+            list.insert(lol);
         }
-
-    }
-
-    public int length(){
-        int y = 1;
-        list.toFirst();
-        while(list.hasAccess()){
-            list.next();
-            y++;
-        }
-        return y;
     }
 }

@@ -6,7 +6,7 @@ public class Main {
         myList.append(new MyNumber(5));
         myList.append(new MyNumber(9));
         myList.append(new MyNumber(3));
-        myList.append(new MyNumber(78));
+        myList.append(new MyNumber(8));
         myList.append(new MyNumber(1));
 
         System.out.println("Vor dem Sortieren:");
