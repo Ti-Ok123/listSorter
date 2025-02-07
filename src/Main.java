@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         List<MyNumber> myList = new List<>();
         myList.append(new MyNumber(5));
-        myList.append(new MyNumber(9));
+        myList.append(new MyNumber(0));
+        myList.append(new MyNumber(7));
+        myList.append(new MyNumber(0));
         myList.append(new MyNumber(3));
-        myList.append(new MyNumber(8));
-        myList.append(new MyNumber(1));
 
         System.out.println("Vor dem Sortieren:");
         printList(myList);

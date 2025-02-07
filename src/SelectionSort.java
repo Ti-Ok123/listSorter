@@ -15,7 +15,6 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
         int i = 0;
         int x = 0;
         int e = length();
-        int le = length();
         boolean ok = false;
         ContentType lol = null;
 
@@ -45,6 +44,12 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
             }
             e--;
             list.toFirst();
+            i = x;
+            while (i > 0){
+                list.next();
+                i--;
+            }
+            i = x;
             while(!lol.isEqual(list.getContent())){
                 list.next();
             }
@@ -57,11 +62,9 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
                 i--;
             }
             list.insert(lol);
-            list.next();
             if(!list.hasAccess()){
                 list.append(lol);
             }
-
             x++;
         }
 
