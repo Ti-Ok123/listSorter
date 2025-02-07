@@ -10,7 +10,32 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
 
 
     public void bubbleSort() {
+        if (list.isEmpty()) {
+            return; // Keine Sortierung nötig, wenn die Liste leer istt
+        }
 
+        var laenge = lengthList(this.list);
+
+        list.toFirst();
+
+        for (int i = 0; i <= laenge; i++) {
+            while (list.hasAccess()) {
+                ContentType current = list.getContent();
+                list.next();
+
+                if (list.hasAccess()) {
+                    ContentType next = list.getContent();
+                    if (current.isGreater(next)) {
+                        // Werte tauschen
+                        swap(list, current, next);
+                        list.toFirst();
+                        for (int j = 0; j < i; j++) {
+                            list.next();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
@@ -43,5 +68,15 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 list.next();
             }
         }
+    }
+
+    private <T> int lengthList(List<T> pList) {
+        int counter = 0;
+        pList.toFirst();
+        while(pList.hasAccess()) {
+            counter++;
+            pList.next();
+        }
+        return counter;
     }
 }
