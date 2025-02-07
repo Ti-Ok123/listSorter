@@ -13,7 +13,6 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
         int lenge = lengeListe();
         ContentType kleinstes;
         ContentType tauschobjekt;
-        //int indexKleinstes = 0;
         for(int j = 0; j < lenge - 1; j++) {
             System.out.println("j ist "+j);
             list.toFirst();
@@ -22,17 +21,15 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
             }
             kleinstes = list.getContent();
             tauschobjekt = list.getContent();
-            //indexKleinstes = j;
-            for (int i = j; i < lenge ; i++) {
-                System.out.println("i ist "+i);
+            for (int i = j; i < lenge - 1; i++) {
                 list.next();
                 if(list.getContent().isLess(kleinstes)){
                     kleinstes = list.getContent();
-                    //indexKleinstes = i;
 
                 }
-                swap(list, tauschobjekt, kleinstes);
+
             }
+            swap(list, tauschobjekt, kleinstes);
 
         }
     }

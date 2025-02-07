@@ -3,7 +3,7 @@ import utils.List;
 public class Main {
     public static void main(String[] args) {
         List<MyNumber> myList = new List<>();
-        myList.append(new MyNumber(99));
+        myList.append(new MyNumber(3));
         myList.append(new MyNumber(5));
         myList.append(new MyNumber(6));
         myList.append(new MyNumber(2));
