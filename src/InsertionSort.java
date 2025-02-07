@@ -64,7 +64,6 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
         }
     }
     }
-
     public int length(){
         int y = 0;
         list.toFirst();
@@ -74,5 +73,6 @@ public class InsertionSort<ContentType extends ComparableContent<ContentType>> {
         }
         return y;
     }
+
 
 }
