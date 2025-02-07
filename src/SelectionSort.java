@@ -10,7 +10,6 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
     }
 
 
-    //Undendlich schleife////
 
     public void selectionSort() {
         if (list.isEmpty()){
@@ -18,26 +17,23 @@ public class SelectionSort<ContentType extends ComparableContent<ContentType>> {
         } else {
             for (int i = getLength(list); 0 <= i; i--){
                 list.toFirst();
+                ContentType temp = list.getContent();
                 while(list.hasAccess()){
-                    ContentType temp =list.getContent();
-                    compare(temp);
                     list.next();
-                    swap(list,temp,list.getContent());
+                    if (list.hasAccess()) {
+                        if (temp.isLess(list.getContent())) {
+                            temp = list.getContent();
+                        }
+                    }
                 }
+                list.toFirst();
+                for (int j = 0; j <= i - 1; j++) {
+                    list.next();
+                }
+                swap(list, temp, list.getContent());
             }
         }
     }
-
-    public ContentType compare(ContentType t){
-        while (list.hasAccess()){
-        if(!list.getContent().isLess(t)) {
-            list.next();
-           }
-        }
-        t = list.getContent();
-        return t;
-    }
-
 
     public static <ContentType> void swap(List<ContentType> list, ContentType item1, ContentType item2) {
         if (list.isEmpty() || item1.equals(item2)) {

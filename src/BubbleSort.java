@@ -51,7 +51,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
             if (list.getContent().equals(item1)) {
                 temp1 = list.getContent();
                 gefunden1 = true;
-            } else if (list.getContent().equals(item2)) {//
+            } else if (list.getContent().equals(item2)) {
                 temp2 = list.getContent();
                 gefunden2 = true;
             }
@@ -70,7 +70,7 @@ public class BubbleSort<ContentType extends ComparableContent<ContentType>> {
                 list.next();
             }
         }
-    } ///
+    }
 
     public int getLength(List<ContentType> list){
         list.toFirst();
